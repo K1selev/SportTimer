@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>NSUserNotificationsUsageDescription</key>
-	<string>We use notifications to remind you when your workout is finished.</string>
+	<string>Используем уведомления для напоминания о завершении тренировки</string>
+	<key>CFBundleDisplayName</key>
+	<string>🐸 спортсмены</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To avatars</string>
+	<string>Используем галерею для аватров пользователей</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
