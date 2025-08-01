@@ -7,19 +7,32 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A5B3C9392E1E6CAA001E8F96 /* SportTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D5225D2E1D2A27004CD13E /* SportTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F4D5229F2E1E1814004CD13E /* Exceptions for "SportTimer" folder in "SportTimer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F4D5225C2E1D2A27004CD13E /* SportTimer */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A5B3C93B2E1E6CAA001E8F96 /* SportTimer */ = {
+		F4D5225F2E1D2A27004CD13E /* SportTimer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F4D5229F2E1E1814004CD13E /* Exceptions for "SportTimer" folder in "SportTimer" target */,
+			);
 			path = SportTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A5B3C9362E1E6CAA001E8F96 /* Frameworks */ = {
+		F4D5225A2E1D2A27004CD13E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A5B3C9302E1E6CAA001E8F96 = {
+		F4D522542E1D2A27004CD13E = {
 			isa = PBXGroup;
 			children = (
-				A5B3C93B2E1E6CAA001E8F96 /* SportTimer */,
-				A5B3C93A2E1E6CAA001E8F96 /* Products */,
+				F4D5225F2E1D2A27004CD13E /* SportTimer */,
+				F4D5225E2E1D2A27004CD13E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A5B3C93A2E1E6CAA001E8F96 /* Products */ = {
+		F4D5225E2E1D2A27004CD13E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5B3C9392E1E6CAA001E8F96 /* SportTimer.app */,
+				F4D5225D2E1D2A27004CD13E /* SportTimer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A5B3C9382E1E6CAA001E8F96 /* SportTimer */ = {
+		F4D5225C2E1D2A27004CD13E /* SportTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5B3C94C2E1E6CAB001E8F96 /* Build configuration list for PBXNativeTarget "SportTimer" */;
+			buildConfigurationList = F4D522682E1D2A28004CD13E /* Build configuration list for PBXNativeTarget "SportTimer" */;
 			buildPhases = (
-				A5B3C9352E1E6CAA001E8F96 /* Sources */,
-				A5B3C9362E1E6CAA001E8F96 /* Frameworks */,
-				A5B3C9372E1E6CAA001E8F96 /* Resources */,
+				F4D522592E1D2A27004CD13E /* Sources */,
+				F4D5225A2E1D2A27004CD13E /* Frameworks */,
+				F4D5225B2E1D2A27004CD13E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A5B3C93B2E1E6CAA001E8F96 /* SportTimer */,
+				F4D5225F2E1D2A27004CD13E /* SportTimer */,
 			);
 			name = SportTimer;
 			packageProductDependencies = (
 			);
 			productName = SportTimer;
-			productReference = A5B3C9392E1E6CAA001E8F96 /* SportTimer.app */;
+			productReference = F4D5225D2E1D2A27004CD13E /* SportTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A5B3C9312E1E6CAA001E8F96 /* Project object */ = {
+		F4D522552E1D2A27004CD13E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					A5B3C9382E1E6CAA001E8F96 = {
-						CreatedOnToolsVersion = 16.2;
+					F4D5225C2E1D2A27004CD13E = {
+						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = A5B3C9342E1E6CAA001E8F96 /* Build configuration list for PBXProject "SportTimer" */;
+			buildConfigurationList = F4D522582E1D2A27004CD13E /* Build configuration list for PBXProject "SportTimer" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = A5B3C9302E1E6CAA001E8F96;
+			mainGroup = F4D522542E1D2A27004CD13E;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = A5B3C93A2E1E6CAA001E8F96 /* Products */;
+			productRefGroup = F4D5225E2E1D2A27004CD13E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5B3C9382E1E6CAA001E8F96 /* SportTimer */,
+				F4D5225C2E1D2A27004CD13E /* SportTimer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A5B3C9372E1E6CAA001E8F96 /* Resources */ = {
+		F4D5225B2E1D2A27004CD13E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A5B3C9352E1E6CAA001E8F96 /* Sources */ = {
+		F4D522592E1D2A27004CD13E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A5B3C94A2E1E6CAB001E8F96 /* Debug */ = {
+		F4D522662E1D2A28004CD13E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -160,6 +173,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q7K5JZ585U;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -177,7 +191,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -188,7 +202,7 @@
 			};
 			name = Debug;
 		};
-		A5B3C94B2E1E6CAB001E8F96 /* Release */ = {
+		F4D522672E1D2A28004CD13E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -223,6 +237,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q7K5JZ585U;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -234,7 +249,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -244,88 +259,96 @@
 			};
 			name = Release;
 		};
-		A5B3C94D2E1E6CAB001E8F96 /* Debug */ = {
+		F4D522692E1D2A28004CD13E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SportTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = M68PAW62J5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SportTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.k1selev.SportTimer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comograve.SportTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		A5B3C94E2E1E6CAB001E8F96 /* Release */ = {
+		F4D5226A2E1D2A28004CD13E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SportTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = M68PAW62J5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SportTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.k1selev.SportTimer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comograve.SportTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5B3C9342E1E6CAA001E8F96 /* Build configuration list for PBXProject "SportTimer" */ = {
+		F4D522582E1D2A27004CD13E /* Build configuration list for PBXProject "SportTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A5B3C94A2E1E6CAB001E8F96 /* Debug */,
-				A5B3C94B2E1E6CAB001E8F96 /* Release */,
+				F4D522662E1D2A28004CD13E /* Debug */,
+				F4D522672E1D2A28004CD13E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5B3C94C2E1E6CAB001E8F96 /* Build configuration list for PBXNativeTarget "SportTimer" */ = {
+		F4D522682E1D2A28004CD13E /* Build configuration list for PBXNativeTarget "SportTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A5B3C94D2E1E6CAB001E8F96 /* Debug */,
-				A5B3C94E2E1E6CAB001E8F96 /* Release */,
+				F4D522692E1D2A28004CD13E /* Debug */,
+				F4D5226A2E1D2A28004CD13E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A5B3C9312E1E6CAA001E8F96 /* Project object */;
+	rootObject = F4D522552E1D2A27004CD13E /* Project object */;
 }
