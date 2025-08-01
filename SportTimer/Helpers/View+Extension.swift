@@ -2,7 +2,7 @@
 //  View+Extension.swift
 //  SportTimer
 //
-//  Created by Алексей Авер on 09.07.2025.
+//  Created by Сергей Киселев on 09.07.2025.
 //
 
 import SwiftUI

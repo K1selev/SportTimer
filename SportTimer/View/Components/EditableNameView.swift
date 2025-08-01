@@ -2,7 +2,7 @@
 //  EditableNameView.swift
 //  SportTimer
 //
-//  Created by Алексей Авер on 08.07.2025.
+//  Created by Сергей Киселев on 14.07.2025.
 //
 
 import SwiftUI
