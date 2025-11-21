@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+private extension Color {
+    static let selectionBlue = Color(red: 146/255, green: 163/255, blue: 253/255) // #92A3FD
+}
+
 struct CalendarGrid: View {
     @Binding var selectedDate: Date?
     let markersByDate: [Date: Set<Color>]
@@ -40,18 +44,27 @@ struct CalendarGrid: View {
                 ForEach(generateDays()) { date in
                     let markers = markersByDate[date.date] ?? []
                     let isSelected = calendar.isDate(date.date, inSameDayAs: selectedDate ?? Date.distantPast)
+                    let isCurrentMonth = date.isWithinCurrentMonth
 
                     Button {
                         selectedDate = isSelected ? nil : date.date
                     } label: {
                         ZStack {
                             Circle()
-                                .fill(isSelected ? Color.blue.opacity(0.3) : Color.clear)
+                                .fill(isSelected ? Color.selectionBlue.opacity(0.22) : Color.clear)
+                                .overlay(
+                                    Circle()
+                                        .stroke(isSelected ? Color.selectionBlue : Color.clear, lineWidth: 1.5)
+                                )
                                 .frame(width: 36, height: 36)
 
                             VStack(spacing: 2) {
                                 Text("\(calendar.component(.day, from: date.date))")
-                                    .foregroundColor(.primary)
+                                    .font(.system(size: 15, weight: .semibold))
+                                    .foregroundColor(isSelected
+                                                     ? Color.selectionBlue
+                                                     : (isCurrentMonth ? .primary : .secondary))
+
                                 HStack(spacing: 2) {
                                     ForEach(Array(markers.prefix(3)), id: \.self) { color in
                                         Circle()
@@ -62,7 +75,7 @@ struct CalendarGrid: View {
                             }
                         }
                     }
-                    .disabled(!date.isWithinCurrentMonth)
+                    .disabled(!isCurrentMonth)
                 }
             }
             .padding(.horizontal)

@@ -19,25 +19,18 @@ struct MainTabView: View {
                     Text("Главная")
                 }
                 .tag(0)
-
-            TimerView()
-                .tabItem {
-                    Image(systemName: "timer")
-                    Text("Таймер")
-                }
-                .tag(1)
-
-//            HistoryView(store: store)
-//                .tabItem {
-//                    Image(systemName: "clock.arrow.circlepath")
-//                    Text("History")
-//                }
-//                .tag(2)
             
             ManualEntryView()
                 .tabItem {
                     Image(systemName: "plus")
-                    Text("Добавить")
+                    Text("Тренировка")
+                }
+                .tag(1)
+
+            WaterIntakeView()
+                .tabItem {
+                    Image(systemName: "drop.fill")
+                    Text("Вода")
                 }
                 .tag(2)
 
@@ -48,6 +41,7 @@ struct MainTabView: View {
                 }
                 .tag(3)
         }
+        .tint(Color(red: 146/255, green: 163/255, blue: 253/255))
     }
 }
 

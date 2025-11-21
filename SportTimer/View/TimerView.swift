@@ -9,16 +9,21 @@ import SwiftUI
 struct TimerView: View {
     @EnvironmentObject var store: WorkoutStore
     @StateObject private var viewModel = TimerViewModel()
+    @Environment(\.dismiss) private var dismiss
+    
+    let stopColor = Color(red: 197/255, green: 139/255, blue: 242/255)
+    let pauseColor = Color(red: 250/255, green: 217/255, blue: 109/255)
+    let accentColor   = Color(red: 146/255, green: 163/255, blue: 253/255)
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 16) {
-                Picker("Workout type", selection: $viewModel.workoutType) {
-                    ForEach(WorkoutType.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
-                }
-                .pickerStyle(.segmented)
+                GradientSegmentedPicker(
+                                        options: WorkoutType.allCases,
+                                        title: { $0.rawValue },
+                                        selection: $viewModel.workoutType
+                                    )
+                                    .padding(.top, 8)
                 
                 Spacer()
                 
@@ -29,29 +34,29 @@ struct TimerView: View {
                 
                 Spacer()
                 
-                TextField("Notes", text: $viewModel.notes)
+                TextField("Заметки", text: $viewModel.notes)
                     .textFieldStyle(.roundedBorder)
                 
                 HStack(spacing: 12) {
                     AppButton(
                         title: "Старт", //viewModel.isRunning ? "Старт" : (viewModel.elasped > 0 ? "Продолжить" : "Старт"),
-                        color: viewModel.isRunning ? .gray : .green,
+                        color: viewModel.isRunning ? .gray : accentColor,
                         isDisabled: viewModel.isRunning
                     ) {
                         viewModel.start()
                     }
-
+                    
                     AppButton(
                         title: "Пауза",
-                        color: viewModel.isRunning ? .yellow : .gray,
+                        color: viewModel.isRunning ? pauseColor : .gray,
                         isDisabled: !viewModel.isRunning
                     ) {
                         viewModel.pause()
                     }
-
+                    
                     AppButton(
                         title: "Стоп",
-                        color: .red
+                        color: stopColor
                     ) {
                         viewModel.stop(store: store)
                     }
@@ -62,6 +67,18 @@ struct TimerView: View {
             }
             .mainBackground()
             .navigationTitle("Таймер")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Label("Назад", systemImage: "chevron.backward")
+                    }
+                }
+            }
+            // разрешаем жест свайпа-вниз при модальной подаче
+            .interactiveDismissDisabled(false)
             .hideKeyboard()
         }
     }

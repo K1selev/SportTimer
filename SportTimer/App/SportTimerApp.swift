@@ -13,7 +13,8 @@ import UserNotifications
 struct SportTimerApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
+    @State private var isAuthorized = true
+    
     let container = NSPersistentContainer(name: "WorkoutModel")
     let store: WorkoutStore
     
@@ -28,13 +29,19 @@ struct SportTimerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-                .environment(\.managedObjectContext, container.viewContext)
-                .environmentObject(store)
-                .preferredColorScheme(.light)
-                .onAppear {
-                    NotificationManager.requestPermissionIfNeeded()
+            Group {
+                if isAuthorized {
+                    MainTabView()
+                } else {
+                    AuthRootView()
                 }
+            }
+            .environment(\.managedObjectContext, container.viewContext)
+            .environmentObject(store)
+            .preferredColorScheme(.light)
+            .onAppear {
+                NotificationManager.requestPermissionIfNeeded()
+            }
         }
     }
 }

@@ -18,55 +18,56 @@ struct ManualEntryView: View {
     @State private var notes: String = ""
     @State private var isSaving = false
     @State private var showSuccessMessage = false
+    @State private var showTimer = false
 
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack(spacing: 16) {
-                    Picker("Тип тренировки", selection: $workoutType) {
-                        ForEach(WorkoutType.allCases, id: \.self) {
-                            Text($0.rawValue)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-
+                    GradientSegmentedPicker(
+                                            options: WorkoutType.allCases,
+                                            title: { $0.rawValue },
+                                            selection: $workoutType
+                                        )
+                                        .padding(.top, 8)
+                    
                     GroupBox {
                         VStack(alignment: .leading, spacing: 12) {
                             Text("Дата и время тренировки")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
-
+                            
                             DatePicker("Дата", selection: $selectedDate, displayedComponents: .date)
                                 .datePickerStyle(.compact)
-
+                            
                             DatePicker("Время начала", selection: $selectedTime, displayedComponents: .hourAndMinute)
                                 .datePickerStyle(.compact)
                         }
                     }
-
+                    
                     Stepper(value: $durationInMinutes, in: 1...300) {
                         Text("Продолжительность: \(durationInMinutes) мин")
                     }
-
+                    
                     TextField("Заметки", text: $notes)
                         .textFieldStyle(.roundedBorder)
-
+                    
                     if isSaving {
                         ProgressView()
                             .progressViewStyle(.circular)
                     } else {
-                        AppButton(title: "Сохранить", color: .green) {
+                        Button {
                             saveWorkout()
-                        }
+                        } label: { Text("Сохранить") }
+                        .buttonStyle(PrimaryGradientButtonStyle())
                     }
-
+                    
                     Spacer(minLength: 40)
                 }
                 .mainBackground()
-                .navigationTitle("Добавить")
+                .navigationTitle("Тренировка")
                 .hideKeyboard()
-
-                // ✅ Уведомление об успехе
+                
                 if showSuccessMessage {
                     VStack {
                         Spacer()
@@ -81,6 +82,33 @@ struct ManualEntryView: View {
                     }
                     .animation(.easeOut(duration: 0.3), value: showSuccessMessage)
                 }
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button {
+                            showTimer = true
+                        } label: {
+                            Image(systemName: "timer")
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundColor(.white)
+                                .padding(20)
+                                .background(
+                                    Circle().fill(AppTheme.gradient) // <- тот же градиент
+                                )
+                        }
+                        .accessibilityLabel("Открыть таймер")
+                        .shadow(color: .black.opacity(0.15), radius: 10, x: 0, y: 6)
+                        .padding(.trailing, 20)
+                        .padding(.bottom, 20)
+                    }
+                }
+                .allowsHitTesting(true) //
+            }
+            .fullScreenCover(isPresented: $showTimer) {
+                TimerView()
+                    .environmentObject(store)
             }
         }
     }
@@ -127,7 +155,7 @@ struct ManualEntryView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             withAnimation {
                 showSuccessMessage = false
-                dismiss()
+//                dismiss()
             }
         }
     }

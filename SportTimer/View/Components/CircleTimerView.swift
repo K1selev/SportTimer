@@ -18,7 +18,7 @@ struct CircleTimerView: View {
                 .stroke(Color.gray.opacity(0.2), lineWidth: 16)
             Circle()
                 .trim(from: 0, to: progress)
-                .stroke(Color.success, lineWidth: 16)
+                .stroke(Color(red: 146/255, green: 163/255, blue: 253/255), lineWidth: 16)
                 .rotationEffect(.degrees(-90))
                 .animation(.easeInOut, value: progress)
 
