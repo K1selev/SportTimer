@@ -13,12 +13,11 @@ protocol WaterServiceProtocol {
     func loadGoal() async -> Int
     func saveGoal(_ ml: Int) async
 
-    func counts(for date: Date) async -> [Int: Int] // [cupML: count]
+    func counts(for date: Date) async -> [Int: Int]
     func setCount(_ count: Int, for cupML: Int, on date: Date) async
     func increment(cupML: Int, on date: Date) async
     func decrement(cupML: Int, on date: Date) async
 
-    /// Суммарно по дням текущей недели (в миллилитрах)
     func weekTotals(weekOf date: Date) async -> [Date: Int]
 }
 
@@ -26,7 +25,7 @@ final class UserDefaultsWaterService: WaterServiceProtocol {
     private let defaults = UserDefaults.standard
     private let calendar = Calendar.current
 
-    private let countsKey = "water.counts.by.date" // [String: [String:Int]]
+    private let countsKey = "water.counts.by.date"
     private let goalKey   = "water.goal.ml"
 
     private func dayKey(_ date: Date) -> String {

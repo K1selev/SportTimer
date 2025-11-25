@@ -5,8 +5,6 @@
 //  Created by Сергей Киселев on 09.10.2025.
 //
 
-
-
 import SwiftUI
 
 struct WaterIntakeView: View {
@@ -25,12 +23,13 @@ struct WaterIntakeView: View {
             .padding(.top, 12)
             .background(WaterTheme.bg.ignoresSafeArea())
             .navigationTitle("Баланс воды")
-//            .navigationBarTitleDisplayMode(.inline)
             .task { await vm.onAppear() }
             .sheet(isPresented: $showCalcSheet) {
                 WaterCalculatorSheet(
                     onResult: { _ in },
-                    onSetGoal: { ml in Task { await vm.setGoal(ml) } }
+                    onSetGoal: { ml in
+                        Task { await vm.setGoal(ml) }
+                    }
                 )
             }
             .sheet(isPresented: $showCustomCup) {
@@ -49,12 +48,11 @@ struct WaterIntakeView: View {
                 Text("Сегодня")
                     .font(.headline)
                 Spacer()
-                Text("Цель: \(vm.goalML/1000) л")
+                let liters = Double(vm.goalML) / 1000.0
+                Text("Цель: \(liters.formatted(.number.precision(.fractionLength(1)))) л")
                     .foregroundStyle(WaterTheme.textSecondary)
                     .font(.subheadline)
             }
-
-            // Горизонтальный скролл для плиток стаканов
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
                     CupAddTile { showCustomCup = true }
@@ -66,7 +64,7 @@ struct WaterIntakeView: View {
                             count: count,
                             onIncrement: { Task { await vm.increment(cupML) } },
                             onDecrement: { Task { await vm.decrement(cupML) } },
-                            onRemove: { vm.removeCup(cupML) } // NEW
+                            onRemove:    { vm.removeCup(cupML) }
                         )
                     }
                 }
@@ -84,9 +82,9 @@ struct WaterIntakeView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Статистика")
                 .font(.headline)
+
             WaterBarChart(valuesML: vm.weekBars, goalML: vm.goalML)
                 .frame(height: 180)
         }
     }
 }
-

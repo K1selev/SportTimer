@@ -21,7 +21,7 @@ final class WaterCalculatorVM: ObservableObject {
     }
 
     func calculate() {
-        // Простая рекомендация (пример): 35 мл на кг + поправка по активности/полу
+        //35 мл на кг + поправка по активности/полу
         guard let w = Int(weight), let g = gender, let a = activity else { return }
         var ml = w * 35
         if g == .male { ml += 250 }
@@ -30,6 +30,6 @@ final class WaterCalculatorVM: ObservableObject {
         case .medium: ml += 250
         case .high: ml += 500
         }
-        resultML = ((ml + 50) / 100) * 100 // округлим до 100 мл
+        resultML = ((ml + 50) / 100) * 100
     }
 }

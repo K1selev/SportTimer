@@ -14,5 +14,9 @@
 		<string>processing</string>
 		<string>audio</string>
 	</array>
+    <key>NSHealthShareUsageDescription</key>
+    <string>Приложению нужно читать данные сна из «Здоровье», чтобы показывать аналитику.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>Приложение может записывать данные в «Здоровье» (отключите, если не хотите).</string>
 </dict>
 </plist>

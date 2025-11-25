@@ -27,10 +27,16 @@ struct MainTabView: View {
                 }
                 .tag(1)
 
-            WaterIntakeView()
+//            WaterIntakeView()
+//                .tabItem {
+//                    Image(systemName: "drop.fill")
+//                    Text("Вода")
+//                }
+//                .tag(2)
+            TrackerView()
                 .tabItem {
-                    Image(systemName: "drop.fill")
-                    Text("Вода")
+                    Image(systemName: "chart.bar.fill")
+                    Text("Трекер")
                 }
                 .tag(2)
 
