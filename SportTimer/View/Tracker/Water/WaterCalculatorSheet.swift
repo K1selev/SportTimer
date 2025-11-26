@@ -151,11 +151,11 @@ struct WaterCalculatorSheet: View {
 
 // MARK: Локализация enum-ов для калькулятора
 
-private extension Gender {
+extension Gender {
     var rawValueRu: String { self == .male ? "Мужской" : "Женский" }
 }
 
-private extension ActivityLevel {
+extension ActivityLevel {
     var rawValueRu: String {
         switch self {
         case .low: return "Низкая"
@@ -165,7 +165,7 @@ private extension ActivityLevel {
     }
 }
 
-private struct SectionCard<Content: View>: View {
+struct SectionCard<Content: View>: View {
     @ViewBuilder var content: () -> Content
     var body: some View {
         VStack(spacing: 0, content: content)
