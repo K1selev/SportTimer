@@ -2,23 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Нужно, чтобы выбирать фото продукта из галереи</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Нужно, чтобы фотографировать продукт/этикетку</string>
 	<key>NSUserNotificationsUsageDescription</key>
 	<string>Используем уведомления для напоминания о завершении тренировки</string>
-	<key>CFBundleDisplayName</key>
-	<string>Cпортсмены</string>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>fetch</string>
-		<string>processing</string>
 		<string>audio</string>
 	</array>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Приложению нужно читать данные сна из «Здоровье», чтобы показывать аналитику.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Приложение может записывать данные в «Здоровье» (отключите, если не хотите).</string>
 </dict>
 </plist>

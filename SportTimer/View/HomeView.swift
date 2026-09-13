@@ -165,6 +165,19 @@ struct HomeView: View {
                 }
                 .listStyle(.plain)
                 .background(Color.clear)
+
+                ShareLink(item: shareStatisticsText) {
+                    Label("Поделиться статистикой", systemImage: "square.and.arrow.up")
+                        .font(.system(.subheadline, design: .rounded).weight(.semibold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity, minHeight: 48)
+                        .background(AppTheme.gradient)
+                        .clipShape(Capsule())
+                }
+                .accessibilityLabel("Поделиться своей статистикой")
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 12)
             }
             .navigationTitle("Главная")
             .navigationBarTitleDisplayMode(.large)
@@ -212,6 +225,31 @@ struct HomeView: View {
         } else {
             return "\(hours):" + String(format: "%02d", minutes)
         }
+    }
+
+    private var totalMonthlyShareDisplay: String {
+        let hours = totalMonthlyDuration / 3600
+        let minutes = (totalMonthlyDuration % 3600) / 60
+
+        switch (hours, minutes) {
+        case (0, 0):
+            return "0 мин"
+        case (0, let minutes):
+            return "\(minutes) мин"
+        case (let hours, 0):
+            return "\(hours) ч"
+        default:
+            return "\(hours) ч \(minutes) мин"
+        }
+    }
+
+    private var shareStatisticsText: String {
+        """
+        Моя статистика в SportTimer за этот месяц:
+        Тренировок: \(monthlyWorkouts.count)
+        Общее время: \(totalMonthlyShareDisplay)
+        Вес: \(weightKG) кг
+        """
     }
 
     private var russianDateFormatter: DateFormatter {

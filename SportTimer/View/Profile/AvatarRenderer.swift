@@ -141,13 +141,23 @@ struct AvatarRenderer: View {
     }
     
     private func mouthLayer(_ S: CGFloat, headY: CGFloat, headH: CGFloat) -> some View {
-        Path { p in
-            p.addArc(center: .zero, radius: S * 0.035,
+        let radius: CGFloat = S * 0.035
+        let lineWidth: CGFloat = S * 0.012
+        let width: CGFloat = S * 0.12
+        let height: CGFloat = S * 0.05
+        let posX: CGFloat = S * 0.5
+        let posY: CGFloat = headY + headH * 0.18
+        let strokeColor = Color.black.opacity(0.8)
+
+        let path = Path { p in
+            p.addArc(center: .zero, radius: radius,
                      startAngle: .degrees(20), endAngle: .degrees(160), clockwise: false)
         }
-        .stroke(Color.black.opacity(0.8), lineWidth: S * 0.012)
-        .frame(width: S * 0.12, height: S * 0.05)
-        .position(x: S * 0.5, y: headY + headH * 0.18)
+
+        return path
+            .stroke(strokeColor, lineWidth: lineWidth)
+            .frame(width: width, height: height)
+            .position(x: posX, y: posY)
     }
     
     // MARK: - Glasses
